@@ -6,7 +6,7 @@ import java.util.List;
 
 public class MergeSort {
 
-    public  void sort(List<Node> array){
+    public void sort(List<Node> array){
         int length = array.size();
         if (length <= 1) return;
 

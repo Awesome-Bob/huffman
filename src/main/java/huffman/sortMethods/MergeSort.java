@@ -26,7 +26,6 @@ public class MergeSort {
         sort(leftArray);
         sort(rightArray);
         merge(leftArray, rightArray, array);
-
     }
 
     private static void merge(ArrayList<Node> leftArray, ArrayList<Node> rightArray, List<Node> array) {

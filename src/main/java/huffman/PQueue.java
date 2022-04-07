@@ -32,11 +32,10 @@ public class PQueue {
         int size =queue.size();
         int freq = n.getFreq();
         if (size==1){
-            if (queue.get(0).getFreq()>freq){
+            if (queue.get(0).getFreq()>freq)
                 queue.add(0,n);
-            }else {
+            else
                 queue.add(1,n);
-            }
             return;
         }
 
@@ -54,14 +53,13 @@ public class PQueue {
         //bubbleSort.sort(n,queue);
 
         // Quicksort method
-        //queue.add(size-1,n);
-        //QuickSort qs = new QuickSort();
-        //qs.sort(queue);
+        QuickSort qs = new QuickSort();
+        qs.sort(queue, n);
 
         //Mergesort method
-        MergeSort mergeSort = new MergeSort();
-        queue.add(size-1,n);
-        mergeSort.sort(queue);
+        //MergeSort mergeSort = new MergeSort();
+        //queue.add(size-1,n);
+        //mergeSort.sort(queue);
     }
 
     /**

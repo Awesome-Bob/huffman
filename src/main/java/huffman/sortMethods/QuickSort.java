@@ -7,7 +7,8 @@ import java.util.List;
 public class QuickSort {
 
 
-    public  void sort(List<Node> array){
+    public  void sort(List<Node> array, Node n){
+        array.add(array.size()-1,n);
         quicksort(array,0,array.size()-1);
     }
 

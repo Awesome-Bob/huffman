@@ -86,6 +86,8 @@ public class Huffman {
      *              representing the path through the tree from the root to the leaf node labelled c.
      */
     public static Map<Character, List<Boolean>> buildCode(Node tree) {
+        if (tree == null) return null;
+
         throw new UnsupportedOperationException("Method not implemented");
     }
 
@@ -103,6 +105,13 @@ public class Huffman {
      * @return      The Huffman coding.
      */
     public static HuffmanCoding encode(String input) {
+        Map<Character, List<Boolean>> code = buildCode(treeFromFreqTable(freqTable(input)));
+        for (char c : code.keySet()){
+
+
+        }
+
+
         throw new UnsupportedOperationException("Method not implemented");
     }
 

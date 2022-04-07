@@ -1,5 +1,6 @@
 package huffman.tree;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 /**
@@ -31,7 +32,9 @@ public class Branch extends Node {
      * @return the map of characters and paths
      */
     public Map<Character, List<Boolean>> traverse(List<Boolean> list) {
-        throw new UnsupportedOperationException("Method not implemented");
+        Map<Character, List<Boolean>> map = new HashMap<>();
+
+        return map;
     }
 
     public Node getLeft() {

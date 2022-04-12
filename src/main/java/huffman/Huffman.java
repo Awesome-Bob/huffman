@@ -87,9 +87,14 @@ public class Huffman {
      */
     public static Map<Character, List<Boolean>> buildCode(Node tree) {
         if (tree == null) return null;
+        ArrayList<Boolean> path = new ArrayList<>();
+        Map<Character, List<Boolean>> code = new HashMap<>();
+        code.putAll(tree.traverse(path));
 
-        throw new UnsupportedOperationException("Method not implemented");
+        return code;
     }
+
+
 
     /**
      * Create the huffman coding for an input string by calling the various methods written above. I.e.
@@ -106,13 +111,13 @@ public class Huffman {
      */
     public static HuffmanCoding encode(String input) {
         Map<Character, List<Boolean>> code = buildCode(treeFromFreqTable(freqTable(input)));
-        for (char c : code.keySet()){
-
-
+        List<Boolean> data = new ArrayList<>();
+        char[] strArray = input.toCharArray();
+        for (char c : strArray){
+            List<Boolean> keyCode = code.get(c);
+            data.addAll(keyCode);
         }
-
-
-        throw new UnsupportedOperationException("Method not implemented");
+        return new HuffmanCoding(code, data);
     }
 
     /**

@@ -4,7 +4,6 @@ import huffman.sortMethods.BubbleSort;
 import huffman.sortMethods.MergeSort;
 import huffman.sortMethods.QuickSort;
 import huffman.tree.Node;
-
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -38,12 +37,10 @@ public class PQueue {
                 queue.add(1,n);
             return;
         }
-
         if (queue.get(size-1).getFreq()<freq){
-            queue.add(size,n);
+            queue.add(n);
             return;
         }
-
         if (queue.get(0).getFreq()>freq){
             queue.add(0,n);
             return;

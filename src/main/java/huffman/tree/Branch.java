@@ -1,5 +1,6 @@
 package huffman.tree;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,16 @@ public class Branch extends Node {
      */
     public Map<Character, List<Boolean>> traverse(List<Boolean> list) {
         Map<Character, List<Boolean>> map = new HashMap<>();
-
+        if (this.left != null){
+            ArrayList<Boolean> leftList = new ArrayList(list);
+            leftList.add(false);
+            map.putAll(this.getLeft().traverse(leftList));
+        }
+        if (this.right != null){
+            ArrayList<Boolean> rightList = new ArrayList(list);
+            rightList.add(true);
+            map.putAll(this.getRight().traverse(rightList));
+        }
         return map;
     }
 

@@ -39,8 +39,7 @@ public class Leaf extends Node {
     @Override
     public Map<Character, List<Boolean>> traverse(List<Boolean> list) {
         Map<Character, List<Boolean>> map = new HashMap<>();
-
-        
+        map.put(this.label, list);
         return map;
     }
 }

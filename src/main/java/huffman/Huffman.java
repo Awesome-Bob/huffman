@@ -88,10 +88,8 @@ public class Huffman {
     public static Map<Character, List<Boolean>> buildCode(Node tree) {
         if (tree == null) return null;
         ArrayList<Boolean> path = new ArrayList<>();
-        Map<Character, List<Boolean>> code = new HashMap<>();
-        code.putAll(tree.traverse(path));
 
-        return code;
+        return new HashMap<>(tree.traverse(path));
     }
 
 
@@ -143,7 +141,34 @@ public class Huffman {
      * @return      The reconstructed tree.
      */
     public static Node treeFromCode(Map<Character, List<Boolean>> code) {
-        throw new UnsupportedOperationException("Method not implemented");
+        Branch root = new Branch(0,null,null);
+        ArrayList<Character> chars = new ArrayList<>();
+        code.forEach((key,value) -> chars.add(key));
+        for (char c : chars){
+            Node currentNode = root;
+            List<Boolean> bs = code.get(c);
+            for (int i =0; i<bs.size(); i++){
+                Boolean b = bs.get(i);
+                if (b.equals(false)){
+                    if (i == bs.size()-1){
+                        ((Branch) currentNode).setLeft(new Leaf(c,0));
+                    }
+                    else if (((Branch) currentNode).getLeft() == null){
+                        ((Branch) currentNode).setLeft(new Branch(0,null,null));
+                    }
+                        currentNode = ((Branch) currentNode).getLeft();
+                }else if (b.equals(true)){
+                    if (i == bs.size()-1){
+                        ((Branch) currentNode).setRight(new Leaf(c,0));
+                    }
+                    else if (((Branch) currentNode).getRight()==null){
+                        ((Branch) currentNode).setRight(new Branch(0,null,null));
+                    }
+                    currentNode = ((Branch) currentNode).getRight();
+                }
+            }
+        }
+        return root;
     }
 
 
@@ -159,6 +184,16 @@ public class Huffman {
      * @return      The decoded string.
      */
     public static String decode(Map<Character, List<Boolean>> code, List<Boolean> data) {
-        throw new UnsupportedOperationException("Method not implemented");
+        Node tree = treeFromCode(code);
+        Node current = tree;
+        StringBuilder sb = new StringBuilder();
+        for (Boolean b : data){
+            current =b.equals(false) ? ((Branch)current).getLeft() : ((Branch) current).getRight();
+            if (current instanceof Leaf){
+                sb.append(((Leaf) current).getLabel());
+                current=tree;
+            }
+        }
+        return sb.toString();
     }
 }

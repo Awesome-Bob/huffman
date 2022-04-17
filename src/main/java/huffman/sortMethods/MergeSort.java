@@ -6,7 +6,12 @@ import java.util.List;
 
 public class MergeSort {
 
-    public void sort(List<Node> array){
+
+    public void sort(Node node, List<Node> array){
+        array.add(node);
+        mergeSort(array);
+    }
+    private void mergeSort(List<Node> array){
         int length = array.size();
         if (length <= 1) return;
 
@@ -23,8 +28,8 @@ public class MergeSort {
                 j++;
             }
         }
-        sort(leftArray);
-        sort(rightArray);
+        mergeSort(leftArray);
+        mergeSort(rightArray);
         merge(leftArray, rightArray, array);
     }
 

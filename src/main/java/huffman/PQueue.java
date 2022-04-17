@@ -50,13 +50,12 @@ public class PQueue {
         //bubbleSort.sort(n,queue);
 
         // Quicksort method
-        QuickSort qs = new QuickSort();
-        qs.sort(queue, n);
+         QuickSort qs = new QuickSort();
+         qs.sort(queue, n);
 
         //Mergesort method
         //MergeSort mergeSort = new MergeSort();
-        //queue.add(size-1,n);
-        //mergeSort.sort(queue);
+        //mergeSort.sort(n,queue);
     }
 
     /**

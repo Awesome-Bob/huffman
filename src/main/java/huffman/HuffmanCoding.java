@@ -60,9 +60,7 @@ public class HuffmanCoding implements Serializable {
             FileInputStream fin = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fin);
             return Optional.of((HuffmanCoding) ois.readObject());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return Optional.empty();

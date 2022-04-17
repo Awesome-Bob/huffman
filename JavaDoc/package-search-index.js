@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"huffman"},{"l":"huffman.sortMethods"},{"l":"huffman.tree"},{"l":"huffman.util"}];updateSearchResults();

@@ -87,8 +87,8 @@ public class Huffman {
      */
     public static Map<Character, List<Boolean>> buildCode(Node tree) {
         if (tree == null) return null;
-        ArrayList<Boolean> path = new ArrayList<>();
 
+        ArrayList<Boolean> path = new ArrayList<>();
         return new HashMap<>(tree.traverse(path));
     }
 
@@ -188,7 +188,7 @@ public class Huffman {
         Node current = tree;
         StringBuilder sb = new StringBuilder();
         for (Boolean b : data){
-            current =b.equals(false) ? ((Branch)current).getLeft() : ((Branch) current).getRight();
+            current = b.equals(false) ? ((Branch)current).getLeft() : ((Branch) current).getRight();
             if (current instanceof Leaf){
                 sb.append(((Leaf) current).getLabel());
                 current=tree;

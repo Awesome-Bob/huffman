@@ -1,7 +1,6 @@
 package huffman.tree;
 
 import huffman.util.TreePrinter;
-
 import java.util.List;
 import java.util.Map;
 /**

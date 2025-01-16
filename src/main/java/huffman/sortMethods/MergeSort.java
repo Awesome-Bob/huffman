@@ -4,12 +4,12 @@ import huffman.tree.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MergeSort {
+public class MergeSort implements NodeSort {
 
 
-    public void sort(Node node, List<Node> array){
-        array.add(node);
-        mergeSort(array);
+    public void sort( List<Node> list, Node node){
+        list.add(node);
+        mergeSort(list);
     }
     private void mergeSort(List<Node> array){
         int length = array.size();

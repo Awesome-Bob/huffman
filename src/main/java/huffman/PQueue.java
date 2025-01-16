@@ -1,8 +1,6 @@
 package huffman;
 
-import huffman.sortMethods.BubbleSort;
-import huffman.sortMethods.MergeSort;
-import huffman.sortMethods.QuickSort;
+import huffman.sortMethods.*;
 import huffman.tree.Node;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,17 +43,22 @@ public class PQueue {
             queue.add(0,n);
             return;
         }
+        NodeSort ns = new BinarySearchSort();
+        ns.sort(queue,n);
         // Bubble-sort method
         //BubbleSort bubbleSort = new BubbleSort();
         //bubbleSort.sort(n,queue);
 
         // Quicksort method
-         QuickSort qs = new QuickSort();
-         qs.sort(queue, n);
+         //QuickSort qs = new QuickSort();
+         //.sort(queue, n);
 
         //Mergesort method
-        //MergeSort mergeSort = new MergeSort();
-        //mergeSort.sort(n,queue);
+//        MergeSort mergeSort = new MergeSort();
+//        mergeSort.sort(queue,n);
+
+//        BinarySearchSort bss = new BinarySearchSort();
+//        bss.sort(queue,n);
     }
 
     /**

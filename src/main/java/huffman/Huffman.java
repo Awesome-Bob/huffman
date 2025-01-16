@@ -20,17 +20,17 @@ public class Huffman {
     public static Map<Character, Integer> freqTable (String input) {
         if(input == null || input.isEmpty()) return null;
 
-            Map<Character, Integer> ft = new HashMap<>();
-            char[] strArray = input.toCharArray();
-            for(char c : strArray) {
-                if (ft.containsKey(c)){
-                    ft.put(c, ft.get(c) + 1);
-                }
-                else {
-                    ft.put(c,1);
-                }
+        Map<Character, Integer> ft = new HashMap<>();
+        char[] strArray = input.toCharArray();
+        for(char c : strArray) {
+            if (ft.containsKey(c)){
+                ft.put(c, ft.get(c) + 1);
             }
-            return ft;
+            else {
+                ft.put(c,1);
+            }
+        }
+        return ft;
     }
 
     /**

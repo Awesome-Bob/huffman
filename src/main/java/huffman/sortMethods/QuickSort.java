@@ -4,7 +4,7 @@ import huffman.tree.Node;
 import java.util.Collections;
 import java.util.List;
 
-public class QuickSort {
+public class QuickSort implements NodeSort{
 
 
     public  void sort(List<Node> array, Node n){

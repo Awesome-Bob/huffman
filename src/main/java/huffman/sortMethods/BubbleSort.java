@@ -3,9 +3,9 @@ package huffman.sortMethods;
 import huffman.tree.Node;
 import java.util.List;
 
-public class BubbleSort {
+public class BubbleSort implements NodeSort {
 
-    public void sort(Node n, List<Node> list){
+    public void sort( List<Node> list,Node n){
         int u = 1;
         int freq = n.getFreq();
         int size = list.size();

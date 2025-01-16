@@ -39,7 +39,7 @@ public class TreePrinter {
             sb.append(pointer);
             sb.append(node.getFreq());
             if (node instanceof Leaf) {
-                sb.append(":"+((Leaf) node).getLabel());
+                sb.append(":").append(((Leaf) node).getLabel());
             }
 
             StringBuilder paddingBuilder = new StringBuilder(padding);

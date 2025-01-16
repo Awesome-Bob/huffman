@@ -11,6 +11,7 @@ import java.util.List;
 public class PQueue {
 
     private final List<Node> queue;
+    private final NodeSort ns = new BinarySearchSort();
 
     public PQueue() {
         queue = new ArrayList<>();
@@ -43,22 +44,7 @@ public class PQueue {
             queue.add(0,n);
             return;
         }
-        NodeSort ns = new BinarySearchSort();
         ns.sort(queue,n);
-        // Bubble-sort method
-        //BubbleSort bubbleSort = new BubbleSort();
-        //bubbleSort.sort(n,queue);
-
-        // Quicksort method
-         //QuickSort qs = new QuickSort();
-         //.sort(queue, n);
-
-        //Mergesort method
-//        MergeSort mergeSort = new MergeSort();
-//        mergeSort.sort(queue,n);
-
-//        BinarySearchSort bss = new BinarySearchSort();
-//        bss.sort(queue,n);
     }
 
     /**

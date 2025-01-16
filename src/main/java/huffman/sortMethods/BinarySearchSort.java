@@ -7,15 +7,15 @@ import java.util.List;
 public class BinarySearchSort  implements NodeSort{
 
     public void sort(List<Node> list, Node n){
-        int nfreq = n.getFreq();
+        int nFreq = n.getFreq();
         int lo = 0;
         int hi = list.size();
 
         while (lo<=hi){
-            int mid  = (hi+lo)/2;
-            int mfreq = list.get(mid).getFreq();
-            if (mfreq==nfreq) break;
-            else if (nfreq>mfreq) lo = mid+1;
+            int mid  = lo+(hi-lo)/2;
+            int mFreq = list.get(mid).getFreq();
+            if (mFreq==nFreq) break;
+            else if (nFreq>mFreq) lo = mid+1;
             else hi=mid-1;
         }
 

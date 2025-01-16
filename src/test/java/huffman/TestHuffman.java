@@ -42,7 +42,7 @@ public class TestHuffman {
         for(int i=0;i<input.length();i++) {
             if (!uniques.contains(input.charAt(i))) uniques.add(input.charAt(i));
         }
-        assertEquals(hc.keySet().size(), uniques.size());
+        assertEquals(hc.size(), uniques.size());
         for(int i=0;i<input.length();i++) {
             assertTrue(hc.containsKey(input.charAt(i)));
         }
@@ -74,7 +74,7 @@ public class TestHuffman {
         for (char c: freqTable.keySet()) {
             assertTrue(code.containsKey(c));
         }
-        assertEquals(freqTable.keySet().size(), code.keySet().size());
+        assertEquals(freqTable.size(), code.size());
     }
 
     @Test
